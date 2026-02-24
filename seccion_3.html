@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>seccion 3 - Información Tributaria</title>
 </head>
+
 <body>
-    
+    <center>
+        <h1>Formulario de inscripción</h1>
+        <p>Fecha de hoy:
+            <script>document.write(new Date().toLocaleDateString());</script>
+        </p>
+    </center>
+
+    <table border="1" width="100%" cellpadding="4" cellspacing="0">
+
+        <tr>
+            <th colspan="9" align="center">3. INFORMACIÓN TRIBUTARIA</th>
+        </tr>
+
+        <tr>
+            <td><b>GRAN CONTRIBUYENTE:</b></td>
+            <td>SI <input type="radio" name="gran_contrib" value="si"> &nbsp; NO <input type="radio" name="gran_contrib" value="no"></td>
+            <td><b>RESPONSABLE DE IVA:</b></td>
+            <td>SI <input type="radio" name="resp_iva" value="si"> &nbsp; NO <input type="radio" name="resp_iva" value="no"></td>
+            <td><b>ACTIVIDAD PRINCIPAL:</b></td>
+            <td><input type="text" name="act_principal_1" size="8"></td>
+            <td><input type="text" name="act_principal_2" size="8"></td>
+            <td><input type="text" name="act_principal_3" size="8"></td>
+        </tr>
+
+        <tr>
+            <td><b>AUTORRETENEDOR:</b></td>
+            <td>SI <input type="radio" name="autorreten" value="si"> &nbsp; NO <input type="radio" name="autorreten" value="no"></td>
+            <td><b>DECLARANTE DE RENTA:</b></td>
+            <td>SI <input type="radio" name="decl_renta" value="si"> &nbsp; NO <input type="radio" name="decl_renta" value="no"></td>
+            <td><b>OTRAS:</b></td>
+            <td><input type="text" name="otras_1" size="8"></td>
+            <td><input type="text" name="otras_2" size="8"></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <br>
+    <br>
+
+        <button style="border: 5px solid black; background-color: #CCCCCC; padding: 10px 20px; cursor: pointer;">
+        <a href="seccion_2.html" style="text-decoration: none; color: black; font-weight: bold;">
+            ANTERIOR
+        </a>
+    </button>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;
+
+    <button style="border: 5px solid black; background-color: #CCCCCC; padding: 10px 20px; cursor: pointer;">
+        <a href="seccion_4.html" style="text-decoration: none; color: black; font-weight: bold;">
+            SIGUIENTE
+        </a>
+    </button>
+
 </body>
 </html>
