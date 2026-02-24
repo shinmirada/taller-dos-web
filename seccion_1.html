@@ -4,22 +4,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>seccion 1 formulario</title>
+    <title>seccion 1 Informacion General </title>
 </head>
 
 <body>
     <center>
-        <h1>Bienvenido al formulario de inscripción </h1>
+        <h1>Bienvenido al formulario de inscripción</h1>
         <p>Fecha de hoy:
-            <script>
-                document.write(new Date().toLocaleDateString());
-            </script>
+            <script>document.write(new Date().toLocaleDateString());</script>
+        </p>
     </center>
 
-      <p> Persona natural o Juridica? </p>
-       <br>
-       <input type="checkbox" id="subject1" name="areas" value="Natural">Persona Natural<br>
-        <input type="checkbox" id="subject2" name="areas" value="Juridica">persona Juridica<br>
+    <p>Persona natural o Jurídica?</p>
+    <input type="radio" name="tipo" value="natural" onclick="mostrar('natural')"> Persona Natural
+    <input type="radio" name="tipo" value="juridica" onclick="mostrar('juridica')"> Persona Jurídica
+    <br><br>
+
+    <!-- TABLA PRINCIPAL -->
+    <table border="1" width="100%" cellpadding="4" cellspacing="0">
+
+        <!-- TITULO -->
+        <tr>
+            <th colspan="6" align="center">1. INFORMACIÓN GENERAL DEL PROVEEDOR</th>
+        </tr>
+
+        <!-- SECCION PERSONA JURIDICA -->
+        <tbody id="seccion-juridica" style="display:none">
+            <tr>
+                <td colspan="1"><b>RAZÓN SOCIAL:</b></td>
+                <td colspan="5"><input type="text" name="razon_social" size="60"></td>
+            </tr>
+            <tr>
+                <td><b>NIT:</b></td>
+                <td><input type="text" name="nit" size="20"></td>
+                <td><b>DV:</b></td>
+                <td><input type="text" name="dv" size="4"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <b>TIPO DE SOCIEDAD (No aplica para persona natural):</b><br>
+                    <input type="checkbox" name="sociedad" value="anonima"> Sociedad Anónima &nbsp;
+                    <input type="checkbox" name="sociedad" value="limitada"> Sociedad Limitada &nbsp;
+                    <input type="checkbox" name="sociedad" value="estatal"> Empresa Estatal &nbsp;
+                    <input type="checkbox" name="sociedad" value="unipersonal"> Empresa Unipersonal &nbsp;
+                    <input type="checkbox" name="sociedad" value="sas"> Sociedad por Acciones Simplificada &nbsp;
+                    <input type="checkbox" name="sociedad" value="sucursal"> Sucursal Colombia Empresa Extranjera &nbsp;
+                    <input type="checkbox" name="sociedad" value="extranjera"> Empresa Extranjera &nbsp;
+                    <input type="checkbox" name="sociedad" value="otra"> Otra ¿Cuál? <input type="text"
+                        name="otra_sociedad" size="15">
+                </td>
+            </tr>
+        </tbody>
+
+        <!-- SECCION PERSONA NATURAL -->
+        <tbody id="seccion-natural" style="display:none">
+            <tr>
+                <td colspan="1"><b>NOMBRE:</b></td>
+                <td colspan="5"><input type="text" name="nombre" size="60"></td>
+            </tr>
+            <tr>
+                <td><b>CC:</b></td>
+                <td><input type="text" name="cc" size="20"></td>
+                <td colspan="2"></td>
+                <td colspan="2">
+                    <b>NATURALEZA JURÍDICA:</b> &nbsp;
+                    <input type="radio" name="naturaleza" value="natural"> Persona Natural &nbsp;
+                    <input type="radio" name="naturaleza" value="juridica"> Persona Jurídica
+                </td>
+            </tr>
+        </tbody>
+
+        <!-- SEDE PRINCIPAL -->
+        <tbody id="seccion-sede" style="display:none">
+            <tr>
+                <td colspan="6" align="center"><b>SEDE PRINCIPAL </b></td>
+            </tr>
+            <tr>
+                <td><b>DIRECCIÓN:</b></td>
+                <td colspan="5"><input type="text" name="direccion" size="60"></td>
+            </tr>
+            <tr>
+                <td><b>CIUDAD:</b></td>
+                <td><input type="text" name="ciudad" size="20"></td>
+                <td><b>DEPARTAMENTO:</b></td>
+                <td><input type="text" name="departamento" size="20"></td>
+                <td><b>PAÍS:</b></td>
+                <td><input type="text" name="pais" size="15"></td>
+            </tr>
+            <tr>
+                <td><b>TELÉFONO:</b></td>
+                <td><input type="text" name="telefono" size="15"></td>
+                <td><b>EXT:</b></td>
+                <td><input type="text" name="ext" size="8"></td>
+                <td><b>CELULAR:</b></td>
+                <td><input type="text" name="celular" size="15"></td>
+            </tr>
+            <tr>
+                <td><b>FAX:</b></td>
+                <td><input type="text" name="fax" size="15"></td>
+                <td><b>PÁGINA WEB:</b></td>
+                <td><input type="text" name="web" size="20"></td>
+                <td><b>EMAIL:</b></td>
+                <td><input type="text" name="email" size="20"></td>
+            </tr>
+            <tr>
+                <td><b>OTRO:</b></td>
+                <td colspan="5"><input type="text" name="otro" size="30"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function mostrar(tipo) {
+            document.getElementById('seccion-juridica').style.display = tipo === 'juridica' ? '' : 'none';
+            document.getElementById('seccion-natural').style.display = tipo === 'natural' ? '' : 'none';
+            document.getElementById('seccion-sede').style.display = '';
+            localStorage.setItem('tipo_persona', tipo);
+        }
+    </script>
+
+    <br>
+    <br>
+
+    <button style="border: 5px solid black; background-color: #CCCCCC; padding: 10px 20px; cursor: pointer;">
+        <a href="seccion_2.html" style="text-decoration: none; color: black; font-weight: bold;">
+            SIGUIENTE
+        </a>
+    </button>
 
 </body>
 
