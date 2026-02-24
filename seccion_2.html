@@ -1,11 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sección 2 - Representante Legal y Contactos</title>
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 13px; margin: 20px; }
+        table { border-collapse: collapse; }
+        th { background-color: #CCCCCC; font-weight: bold; }
+        td, th { font-family: Arial, sans-serif; font-size: 13px; }
+        input[type="text"] { font-family: Arial, sans-serif; font-size: 13px; }
+        .btn { border: 3px solid black; background-color: #CCCCCC; padding: 8px 20px; cursor: pointer; font-weight: bold; font-family: Arial, sans-serif; font-size: 13px; }
+        .nav { margin-top: 20px; }
+    </style>
 </head>
 <body>
-    
+    <center>
+        <h2>Formulario de inscripción</h2>
+        <p>Fecha de hoy: <script>document.write(new Date().toLocaleDateString());</script></p>
+    </center>
+
+    <table border="1" width="100%" cellpadding="4" cellspacing="0">
+        <tr>
+            <th colspan="6" align="center">2. REPRESENTANTE LEGAL Y PERSONAS CONTACTO</th>
+        </tr>
+
+        <tbody id="seccion-rep-legal" style="display:none">
+            <tr>
+                <td><b>REPRESENTANTE LEGAL:</b></td>
+                <td colspan="3"><input type="text" name="rep_legal" size="40"></td>
+                <td><b>DOCUMENTO IDENTIDAD:</b></td>
+                <td><input type="text" name="doc_identidad" size="20"></td>
+            </tr>
+            <tr>
+                <td><b>CARGO:</b></td>
+                <td colspan="3"><input type="text" name="cargo_rep" size="40"></td>
+                <td><b>TELÉFONO DIRECTO:</b></td>
+                <td><input type="text" name="tel_directo" size="20"></td>
+            </tr>
+            <tr>
+                <td><b>CELULAR:</b></td>
+                <td><input type="text" name="cel_rep" size="20"></td>
+                <td><b>E-MAIL:</b></td>
+                <td><input type="text" name="email_rep" size="20"></td>
+                <td><b>FAX:</b></td>
+                <td><input type="text" name="fax_rep" size="20"></td>
+            </tr>
+        </tbody>
+
+        <tbody id="seccion-contactos" style="display:none">
+            <tr>
+                <td colspan="6" align="center"><b>CONTACTOS</b></td>
+            </tr>
+            <tr>
+                <th>ÁREA</th>
+                <th>NOMBRE</th>
+                <th colspan="2">CARGO</th>
+                <th>TELÉFONO</th>
+                <th>E-MAIL</th>
+            </tr>
+            <tr>
+                <td>COMERCIAL</td>
+                <td><input type="text" name="nombre_comercial" size="20"></td>
+                <td colspan="2"><input type="text" name="cargo_comercial" size="20"></td>
+                <td><input type="text" name="tel_comercial" size="15"></td>
+                <td><input type="text" name="email_comercial" size="20"></td>
+            </tr>
+            <tr>
+                <td>TÉCNICA</td>
+                <td><input type="text" name="nombre_tecnica" size="20"></td>
+                <td colspan="2"><input type="text" name="cargo_tecnica" size="20"></td>
+                <td><input type="text" name="tel_tecnica" size="15"></td>
+                <td><input type="text" name="email_tecnica" size="20"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="nav">
+        <a href="seccion_1.html" style="text-decoration:none;"><button class="btn">&larr; ANTERIOR</button></a>
+        &nbsp;&nbsp;
+        <a href="seccion_3.html" style="text-decoration:none;"><button class="btn">SIGUIENTE &rarr;</button></a>
+    </div>
+
+    <script>
+        var tipo = localStorage.getItem('tipo_persona');
+        if (tipo === 'juridica') {
+            document.getElementById('seccion-rep-legal').style.display = '';
+            document.getElementById('seccion-contactos').style.display = '';
+        } else if (tipo === 'natural') {
+            document.getElementById('seccion-contactos').style.display = '';
+        }
+    </script>
 </body>
 </html>
