@@ -1,70 +1,57 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Referencia Personal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección 5 - Referencias Personales</title>
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 13px; margin: 20px; }
+        table { border-collapse: collapse; }
+        th { background-color: #CCCCCC; font-weight: bold; }
+        td, th { font-family: Arial, sans-serif; font-size: 13px; }
+        input[type="text"], input[type="email"] { font-family: Arial, sans-serif; font-size: 13px; }
+        .btn { border: 3px solid black; background-color: #CCCCCC; padding: 8px 20px; cursor: pointer; font-weight: bold; font-family: Arial, sans-serif; font-size: 13px; }
+        .nav { margin-top: 20px; }
+    </style>
 </head>
-
 <body>
+    <center>
+        <h2>Formulario de inscripción</h2>
+        <p>Fecha de hoy: <script>document.write(new Date().toLocaleDateString());</script></p>
+    </center>
 
-    <!-- Accion para continuar el formulario -->
-    <form action="seccion_6.html" method="post">
+    <table border="1" width="100%" cellpadding="4" cellspacing="0">
+        <tr>
+            <th colspan="8" align="center">5. REFERENCIAS PERSONALES (Aplica persona natural)</th>
+        </tr>
 
-        <table border="1" width="100%" align="center">
-            <!-- Espacio para centrar el html con salto de pagina -->
-            <br><br><br><br><br><br><br><br><br><br>
+        <tr>
+            <td><b>NOMBRE:</b></td>
+            <td colspan="5"><input type="text" name="nombre_ref" size="50"></td>
+            <td><b>CC:</b></td>
+            <td><input type="text" name="cc_ref" size="15"></td>
+        </tr>
+        <tr>
+            <td><b>CONTACTO:</b></td>
+            <td><input type="text" name="contacto1" size="18"></td>
+            <td><b>DIR:</b></td>
+            <td><input type="text" name="dir1" size="18"></td>
+            <td><b>TEL:</b></td>
+            <td><input type="text" name="tel1" size="12"></td>
+            <td><b>CEL:</b></td>
+            <td><input type="text" name="cel1" size="12"></td>
+        </tr>
+        <tr>
+            <td colspan="6"></td>
+            <td><b>E-MAIL:</b></td>
+            <td><input type="email" name="email1" size="20"></td>
+        </tr>
+    </table>
 
-            <tr>
-                <td colspan="8" align="center">4. REFERENCIAS PERSONALES (Aplica persona natural)</td>
-            </tr>
-
-            <!-- Unica referencia -->
-            <tr>
-                <td>NOMBRE:</td>
-                <td colspan="5">
-                    <input type="text" name="razon1" size="60">
-                </td>
-                <td>CC:</td>
-                <td>
-                    <input type="text" name="nit1">
-                </td>
-            </tr>
-
-            <tr>
-                <td>CONTACTO:</td>
-                <td>
-                    <input type="text" name="contacto1">
-                </td>
-                <td>DIR:</td>
-                <td>
-                    <input type="text" name="dir1">
-                </td>
-                <td>TEL:</td>
-                <td>
-                    <input type="text" name="tel1">
-                </td>
-                <td>CEL:</td>
-                <td>
-                    <input type="text" name="cel1">
-                </td>
-            </tr>
-
-            <tr>
-                <td colspan="6"></td>
-                <td>E-MAIL:</td>
-                <td>
-                    <input type="email" name="email1">
-                </td>
-            </tr>
-
-        </table>
-
-        <br>
-        <input type="submit" value="Continuar formulario">
-
-    </form>
-
+    <div class="nav">
+        <a href="seccion_3.html" style="text-decoration:none;"><button class="btn">&larr; ANTERIOR</button></a>
+        &nbsp;&nbsp;
+        <a href="seccion_6.html" style="text-decoration:none;"><button class="btn">SIGUIENTE &rarr;</button></a>
+    </div>
 </body>
-
 </html>
